@@ -30,7 +30,8 @@ function ciede2000_native(l1, a1, b1, l2, a2, b2, kl, kc, kh, canonical) {
         if (canonical && Math.PI + 1E-14 < h_mean)
             // Sharma’s implementation, OpenJDK, ...
             h_mean -= Math.PI;
-        else // Lindbloom’s implementation, Netflix’s VMAF, ...
+        else
+            // Lindbloom’s implementation, Netflix’s VMAF, ...
             h_mean += Math.PI;
     }
     var p = 36.0 * h_mean - 55.0 * Math.PI;
